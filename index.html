@@ -25,14 +25,14 @@
         <a href="#" class="nav-link active">
             Home
         </a>
-        <a href="#" class="nav-link">
+        <a href="./Analysis.html">
             Analyze
         </a>
-        <a href="#" class="nav-link">
-            History
-        </a>
-        <a href="#" class="nav-link">
+        <a href="report.html">
             Reports
+        </a>
+        <a href="history.html" >
+            History
         </a>
     </nav>
     <!-- Right Side -->
@@ -50,9 +50,10 @@
             Explainable AI
         </h1>
         <div class="btns">
-            <button class="btn">Analyze X-ray</button>
-            <button class="btn">How it Works</button>
-        </div>
+            <button class="btn" onclick="window.location.href='Analysis.html'">Analyze X-ray</button>
+          <a href="#working">  <button class="btn">How it Works</button>
+  </a>
+          </div>
     </div>
 </section>
 <section class="features-section">
@@ -79,7 +80,6 @@
         Checks whether the uploaded X-ray has sufficient quality
         for OrthoScan AI analysis.
       </p>
-
       <span>PRE-PROCESSING CHECK</span>
     </div>
 
@@ -134,9 +134,9 @@
   </div>
 
 </section>
-<section class="how-it-works">
+<section class="how-it-works" id="working">
 
-  <div class="how-header">
+  <div class="how-header" >
     <h2>How It Works</h2>
     <p>
       A transparent 4-stage pipeline built for research reliability
@@ -207,7 +207,7 @@
       support clinical radiologic workflows.
     </p>
 
-    <a href="#" class="analyze-btn">
+    <a href="Analysis.html" class="analyze-btn">
       <i data-lucide="file-scan"></i>
       <span>Start X-ray Analysis</span>
     </a>
@@ -267,17 +267,12 @@
     </div>
 
   </div>
-
-
   <!-- Bottom -->
   <div class="footer-bottom">
-
     <p>© 2026 OrthoScan. All rights reserved.</p>
-
     <p>AI-assisted analysis • For clinical support</p>
   </div>
 </footer>
-
 <script src="script.js"></script>
 </body>
 </html>

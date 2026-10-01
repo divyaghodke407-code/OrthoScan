@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5faff;
+}
+/* ================= NAVBAR ================= */
+.navbar {
+    width: 100%;
+    height: 72px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 38px;
+    border-bottom: 1px solid #e8f0f8;
+}
+/* ================= LOGO ================= */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+.logo img{
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.brand-text h1 {
+    font-size: 24px;
+    line-height: 25px;
+    color: #0b2c68;
+    font-weight: 750;
+}
+.brand-text span {
+    display: block;
+    margin-top: 3px;
+    font-size: 12px;
+    color: #66809f;
+}
+/* ================= NAVIGATION ================= */
+
+.nav-links {
+    height: 100%;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 38px;
+    margin-left: 30px;
+}
+.nav-links a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    position: relative;
+    text-decoration: none;
+    margin-right: 20px;
+    color: #415875;
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+    text-decoration: none;
+}
+.nav-links a:hover, nav-links a:focus {
+    color: #0868d9;
+}
+.nav-link.active {
+    color: #0868d9;
+
+
+}
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: 7px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: 5px;
+    background: #0876e8;
+}
+.nav-link.active::after {
+        width: 100%;
+
+}
+.nav-link span {
+    font-size: 21px;
+}
+/* ================= RIGHT SIDE ================= */
+.nav-right {
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+}
+.sun-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    cursor: pointer;
+    color: #16355e;
+}
+.arrow {
+    font-size: 21px;
+    color: #526d8c;
+    cursor: pointer;
+}
+/* ================= TABLET ================= */
+@media (max-width: 900px) {
+    .navbar {
+        padding: 0 20px;
+    }
+    .nav-links {
+        gap: 18px;
+    }
+    .nav-link {
+        font-size: 13px;
+    }
+    .brand-text h1 {
+        font-size: 21px;
+    }
+}
+/* ================= MOBILE ================= */
+@media (max-width: 700px) {
+    .navbar {
+        height: 65px;
+        padding: 0 15px;
+    }
+    .logo {
+        width: 42px;
+        height: 42px;
+        font-size: 21px;
+    }
+    .brand-text h1 {
+        font-size: 19px;
+    }
+    .brand-text span {
+        display: none;
+    }
+    .nav-links {
+        display: none;
+    }
+    .nav-right {
+        gap: 8px;
+    }
+    .sun-btn {
+        font-size: 21px;
+    }
+}
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 420px) {
+    .brand-text h1 {
+        font-size: 17px;
+    }
+}

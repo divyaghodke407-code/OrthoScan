@@ -54,7 +54,7 @@ body {
     gap: 38px;
     margin-left: 30px;
 }
-.nav-link {
+.nav-links a {
     height: 100%;
     display: flex;
     align-items: center;
@@ -344,7 +344,6 @@ body {
   transform: translateY(-6px);
   box-shadow: 0 15px 35px rgba(40, 70, 80, 0.10);
 }
-
 /* Icon */
 .icon-box {
   width: 48px;
@@ -384,63 +383,43 @@ body {
   letter-spacing: 1.5px;
   color: #71858d;
 }
-
-
-/* =========================
-   TABLET
-========================= */
-
+/* =========================TABLET========================= */
 @media (max-width: 1000px) {
-
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .section-heading h2 {
     font-size: 36px;
   }
 
 }
-
-
-/* =========================
-   MOBILE
-========================= */
-
+/* ========================= MOBILE========================= */
 @media (max-width: 600px) {
-
   .features-section {
     padding: 50px 18px;
   }
-
   .section-heading {
     margin-bottom: 35px;
   }
-
   .section-heading h2 {
     font-size: 29px;
     line-height: 1.2;
   }
-
   .section-heading p {
     font-size: 14px;
     line-height: 1.6;
   }
-
   .features-grid {
     grid-template-columns: 1fr;
     gap: 15px;
   }
-
   .feature-card {
     min-height: 300px;
     padding: 25px;
   }
-
   .feature-card h3 {
     font-size: 19px;
   }
-
   .feature-card p {
     font-size: 14px;
   }
@@ -470,147 +449,92 @@ body {
 
 .how-header h2 {
   margin: 0 0 18px;
-
   font-size: 42px;
   font-weight: 700;
-
   color: #17232b;
   letter-spacing: -1px;
 }
 
 .how-header p {
   margin: 0;
-
   font-size: 17px;
   line-height: 1.6;
-
   color: #5f6d75;
 }
-
-
-/* =========================
-   STEPS
-========================= */
-
+/* ========================= STEPS========================= */
 .steps-container {
   max-width: 1450px;
   margin: auto;
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-
   position: relative;
 }
-
-
 /* Connecting Line */
-
 .steps-container::before {
   content: "";
-
   position: absolute;
-
   top: 55px;
   left: 10%;
   right: 10%;
-
   border-top: 1px dashed #c6d0d4;
-
   z-index: 0;
 }
-
-
-/* =========================
-   STEP
-========================= */
-
+/* ========================= STEP========================= */
 .step {
   position: relative;
   z-index: 1;
-
   text-align: center;
-
   padding: 0 25px;
 }
-
-
 /* Number Circle */
-
 .step-number {
   width: 106px;
   height: 106px;
-
   margin: 0 auto 35px;
-
   border: 1.5px solid #26343b;
-
   border-radius: 50%;
-
   background: #f8fbfc;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 26px;
   font-weight: 600;
-
   color: #26343b;
 }
-
-
 /* Step Heading */
-
 .step h3 {
   margin: 0 0 14px;
-
   font-size: 20px;
   font-weight: 600;
-
   color: #1b2830;
 }
-
-
 /* Step Description */
-
 .step p {
   max-width: 300px;
   margin: 0 auto;
-
   font-size: 15px;
   line-height: 1.65;
-
   color: #65727a;
 }
-
-
-/* =========================
-   TABLET
-========================= */
+/* ========================= TABLET========================= */
 
 @media (max-width: 1000px) {
-
   .how-it-works {
     padding: 30px 4%;
   }
-
   .how-header {
     margin-bottom: 30pxpx;
   }
-
   .how-header h2 {
     font-size: 36px;
   }
-
   .steps-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 60px 20px;
   }
-
   .steps-container::before {
     display: none;
   }
-
   .step-number {
     width: 90px;
     height: 90px;
@@ -619,22 +543,14 @@ body {
   }
 
 }
-
-
-/* =========================
-   MOBILE
-========================= */
-
+/* =========================  MOBILE========================= */
 @media (max-width: 600px) {
-
   .how-it-works {
     padding: 55px 20px;
   }
-
   .how-header {
     margin-bottom: 50px;
   }
-
   .how-header h2 {
     font-size: 30px;
     letter-spacing: -0.5px;
@@ -649,34 +565,24 @@ body {
     grid-template-columns: 1fr;
     gap: 48px;
   }
-
   .step {
     padding: 0 10px;
   }
-
   .step-number {
     width: 82px;
     height: 82px;
-
     margin-bottom: 25px;
-
     font-size: 21px;
   }
-
   .step h3 {
     font-size: 19px;
   }
-
   .step p {
     max-width: 330px;
     font-size: 14px;
   }
-
 }
-/* =========================
-   ANALYZE CTA
-========================= */
-
+/* ========================= ANALYZE CTA========================= */
 .analyze-cta {
   width: 100%;
   padding: 16px 4% 0;
@@ -684,7 +590,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 .cta-content {
   width: 1000px;
   min-height: 200px;
@@ -696,239 +601,150 @@ body {
   );
 
   border: 1px solid rgba(100, 120, 125, 0.12);
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   text-align: center;
-
   padding: 60px 25px;
-
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.7),
     0 8px 30px rgba(40, 60, 70, 0.04);
 }
-
-
 /* Heading */
-
 .cta-content h2 {
   margin: 0 0 18px;
-
   font-size: 42px;
   line-height: 1.2;
-
   font-weight: 700;
-
   color: #17232b;
-
   letter-spacing: -1px;
 }
-
-
 /* Description */
-
 .cta-content p {
   max-width: 760px;
-
   margin: 0 0 38px;
-
   font-size: 17px;
   line-height: 1.6;
-
   color: #5d6b72;
 }
-
-
 /* Button */
-
 .analyze-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 11px;
-
   min-width: 290px;
-
   padding: 17px 28px;
-
   border-radius: 10px;
-
   background: #123f70;
   color: #ffffff;
-
   text-decoration: none;
-
   font-size: 15px;
   font-weight: 600;
-
   transition: all 0.25s ease;
-
   box-shadow:
     0 8px 20px rgba(18, 63, 112, 0.18);
 }
-
-
 /* Icon */
-
 .analyze-btn svg {
   width: 20px;
   height: 20px;
-
   stroke-width: 2;
 }
-
-
 /* Hover */
-
 .analyze-btn:hover {
   background: #0d3159;
-
   transform: translateY(-2px);
-
   box-shadow:
     0 12px 25px rgba(18, 63, 112, 0.25);
 }
-
-
-/* =========================
-   TABLET
-========================= */
-
+/* ========================= TABLET========================= */
 @media (max-width: 900px) {
-
   .cta-content {
     min-height: 360px;
   }
-
   .cta-content h2 {
     font-size: 36px;
   }
-
   .cta-content p {
     max-width: 650px;
     font-size: 16px;
   }
 
 }
-
-
-/* =========================
-   MOBILE
-========================= */
-
+/* ========================= MOBILE========================= */
 @media (max-width: 600px) {
-
   .analyze-cta {
     padding: 12px 15px 0;
   }
-
   .cta-content {
     min-height: 340px;
-
     padding: 45px 20px;
-
     border-radius: 20px;
   }
-
   .cta-content h2 {
     font-size: 29px;
     line-height: 1.25;
-
     letter-spacing: -0.5px;
   }
-
   .cta-content p {
     font-size: 14px;
     line-height: 1.6;
-
     margin-bottom: 30px;
   }
-
   .analyze-btn {
     width: 100%;
     max-width: 280px;
-
     min-width: 0;
-
     padding: 15px 20px;
-
     font-size: 14px;
     cursor: pointer;
   }
 
 }
-/* =========================
-   FOOTER
-========================= */
-
+/* =========================FOOTER========================= */
 .footer {
   margin-top: 70px;
-
   background: #10232d;
   color: #ffffff;
-
   padding: 65px 5% 0;
 }
-
-
 /* Main Footer */
-
 .footer-container {
   max-width: 1400px;
   margin: auto;
-
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-
   gap: 50px;
-
   padding-bottom: 50px;
 }
 
-
 /* Brand */
-
 .footer-brand h2 {
   margin: 0 0 18px;
-
   font-size: 29px;
   font-weight: 700;
-
   letter-spacing: -0.5px;
 }
-
 .footer-brand h2 span {
   color: #61aeb8;
 }
-
 .footer-brand p {
   max-width: 350px;
-
   margin: 0;
-
   color: #aebdc3;
-
   font-size: 14px;
   line-height: 1.7;
 }
-
-
 /* Headings */
-
 .footer-links h3,
 .footer-contact h3 {
   margin: 0 0 20px;
-
   font-size: 16px;
   font-weight: 600;
 }
-
-
 /* Links */
-
 .footer-links {
   display: flex;
   flex-direction: column;
@@ -937,116 +753,72 @@ body {
 
 .footer-links a {
   width: fit-content;
-
   color: #aebdc3;
-
   text-decoration: none;
-
   font-size: 14px;
-
   transition: 0.2s ease;
 }
-
 .footer-links a:hover {
   color: #ffffff;
   transform: translateX(3px);
 }
-
-
 /* Contact */
-
 .footer-contact p {
   margin: 0 0 15px;
-
   color: #aebdc3;
-
   font-size: 14px;
   line-height: 1.7;
 }
-
 .footer-contact a {
   color: #61aeb8;
-
   font-size: 14px;
-
   text-decoration: none;
 }
 
 .footer-contact a:hover {
   color: #ffffff;
 }
-
-
 /* Bottom */
-
 .footer-bottom {
   max-width: 1400px;
   margin: auto;
-
   padding: 20px 0;
-
   border-top: 1px solid rgba(255,255,255,0.1);
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 20px;
 }
 
 .footer-bottom p {
   margin: 0;
-
   color: #83959d;
-
   font-size: 12px;
 }
-
-
-/* =========================
-   TABLET
-========================= */
-
+/* ========================= TABLET========================= */
 @media (max-width: 900px) {
-
   .footer-container {
     grid-template-columns: 1fr 1fr;
-
     gap: 40px;
   }
-
 }
-
-
-/* =========================
-   MOBILE
-========================= */
-
+/* ========================= MOBILE========================= */
 @media (max-width: 600px) {
-
   .footer {
     margin-top: 50px;
-
     padding: 50px 25px 0;
   }
-
   .footer-container {
     grid-template-columns: 1fr;
-
     gap: 35px;
-
     padding-bottom: 35px;
   }
-
   .footer-brand p {
     max-width: 100%;
   }
-
   .footer-bottom {
     flex-direction: column;
-
     align-items: flex-start;
-
     gap: 8px;
   }
 

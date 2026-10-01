@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OrthoScan - AI X-Ray Analyzer</title>
+
+    <link rel="stylesheet" href="Analysis.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+ <!-- Navbar -->
+<header class="navbar">
+    <!-- Logo + Name -->
+    <a href="#" class="brand">
+        <div class="logo">
+            <img src="images/logo.png">
+        </div>
+        <div class="brand-text">
+            <h1>OrthoScan</h1>
+        </div>
+    </a>
+    <!-- Navigation -->
+    <nav class="nav-links">
+        <a href="index.html" >
+            Home
+        </a>
+        <a href="#" class="nav-link active">
+            Analyze
+        </a>
+        <a href="report.html" >
+            Reports
+        </a>
+        <a href="history.html">
+            History
+        </a>
+    </nav>
+    <!-- Right Side -->
+    <div class="nav-right">
+    </div>
+</header>
+
+    <!-- ============================= -->
+<!-- UPLOAD SCREEN -->
+<!-- ============================= -->
+
+<div id="uploadScreen">
+
+    <h1>X-ray Analysis</h1>
+
+    <p class="subtitle">
+        Upload and analyze X-ray images for AI-assisted fracture screening
+    </p>
+
+
+    <div class="steps">
+
+        <div class="step active" id="stepUpload">
+            <span>✓</span>
+            <b>Upload</b>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step" id="stepPreview">
+            <span>2</span>
+            <b>Preview</b>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step" id="stepAnalyzing">
+            <span>3</span>
+            <b>Analyzing</b>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step" id="stepResult">
+            <span>4</span>
+            <b>Result</b>
+        </div>
+
+    </div>
+
+
+    <!-- तुझा existing upload box -->
+    <div class="upload-box" id="uploadBox">
+
+        <div id="uploadContent">
+
+            <div class="upload-icon">
+                🖼
+            </div>
+
+            <h2>Upload X-ray Image</h2>
+
+            <p>
+                Drag and drop your X-ray image here or browse from your device
+            </p>
+
+            <label for="xrayInput" class="browse-btn">
+                ↥ Browse X-ray
+            </label>
+
+            <input
+                type="file"
+                id="xrayInput"
+                accept="image/png,image/jpeg,image/jpg"
+                hidden
+            >
+
+        </div>
+
+
+        <div class="preview-area" id="previewArea">
+
+            <img id="previewImage">
+
+            <div class="file-info">
+
+                <span id="fileName"></span>
+
+                <button id="removeBtn">×</button>
+
+            </div>
+
+            <button class="continue-btn" id="continueBtn">
+                Continue to Preview →
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- ============================= -->
+<!-- PREVIEW SCREEN -->
+<!-- ============================= -->
+
+<div id="previewScreen" style="display:none;">
+  <div class="info">
+    <h1>X-ray Analysis</h1>
+
+    <p class="subtitle">
+        Upload and analyze X-ray images for AI-assisted fracture screening
+    </p>
+
+
+    <!-- STEPS -->
+
+    <div class="steps">
+
+        <div class="step completed" id="stepUpload">
+            <span>✓</span>
+            <b>Upload</b>
+        </div>
+
+        <div class="line completed-line"></div>
+
+
+        <div class="step active" id="stepPreview">
+            <span>2</span>
+            <b>Preview</b>
+        </div>
+
+        <div class="line"></div>
+
+
+        <div class="step">
+            <span>3</span>
+            <b>Analyzing</b>
+        </div>
+
+        <div class="line"></div>
+
+
+        <div class="step">
+            <span>4</span>
+            <b>Result</b>
+        </div>
+
+    </div>
+
+
+  </div>
+    <!-- MAIN PREVIEW -->
+
+    <div class="preview-layout">
+
+
+        <!-- LEFT -->
+
+        <div class="image-card">
+
+            <div class="image-toolbar">
+
+                <span id="previewFileName">
+                    X-ray Image
+                </span>
+
+                <span>100%</span>
+
+                <button>Reset</button>
+
+            </div>
+
+
+            <div class="image-viewer">
+
+                <img
+                    id="previewPageImage"
+                    src=""
+                    alt="Uploaded X-ray"
+                >
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIGHT -->
+
+        <div class="details-column">
+
+
+            <div class="details-card">
+
+                <h3>Image Details</h3>
+
+                <div class="detail-item">
+
+                    <small>Filename</small>
+
+                    <strong id="previewFileName">
+                        X-ray Image
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <small>Uploaded</small>
+
+                    <strong>
+                        Just now
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <small>Status</small>
+
+                    <span class="ready-status">
+                        ● Ready for analysis
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="analyze-btn"
+                id="analyzeBtn"
+            >
+                ✧ &nbsp; Analyze X-ray
+            </button>
+
+
+            <button
+                class="remove-image-btn"
+                id="previewRemoveBtn"
+            >
+                <a href="#updateScreen">🗑 &nbsp; Remove Image</a>
+            </button>
+
+
+            <p class="medical-note">
+                Note: Ensure the X-ray image is clear and properly positioned
+                for better AI-assisted screening.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- ============================= -->
+<!-- ANALYZING SCREEN -->
+<!-- ============================= -->
+
+<div id="analyzingScreen" style="display:none;">
+
+    <div class="info">
+
+        <h1>X-ray Analysis</h1>
+
+        <p class="subtitle">
+            Upload and analyze X-ray images for AI-assisted fracture screening
+        </p>
+
+        <div class="steps">
+
+            <div class="step completed">
+                <span>✓</span>
+                <b>Upload</b>
+            </div>
+
+            <div class="line completed-line"></div>
+
+            <div class="step completed">
+                <span>✓</span>
+                <b>Preview</b>
+            </div>
+
+            <div class="line completed-line"></div>
+
+            <div class="step active">
+                <span>3</span>
+                <b>Analyzing</b>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+                <span>4</span>
+                <b>Result</b>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ANALYSIS AREA -->
+
+    <div class="analysis-area">
+
+        <div class="scanner">
+
+            <div class="scanner-ring ring-one"></div>
+
+            <div class="scanner-ring ring-two"></div>
+
+            <div class="scanner-ring ring-three"></div>
+
+            <div class="scanner-light">
+
+                <div class="light-core"></div>
+
+                <span>✦</span>
+
+            </div>
+
+        </div>
+
+
+        <h2>Analyzing X-ray...</h2>
+
+        <p>
+            Our AI is carefully examining the X-ray image
+            for potential fracture patterns.
+        </p>
+
+
+        <!-- PROGRESS -->
+
+        <div class="analysis-progress">
+
+            <div class="progress-label">
+
+                <span>AI Analysis</span>
+
+                <span id="analysisPercent">0%</span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div
+                    id="analysisProgress"
+                    class="progress-fill"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- STATUS -->
+
+        <div class="analysis-status">
+
+            <div
+                class="analysis-item active-status"
+                id="analysisStatus1"
+            >
+                <span>✓</span>
+                Processing X-ray image
+            </div>
+
+
+            <div
+                class="analysis-item"
+                id="analysisStatus2"
+            >
+                <span>○</span>
+                Detecting fracture patterns
+            </div>
+
+
+            <div
+                class="analysis-item"
+                id="analysisStatus3"
+            >
+                <span>○</span>
+                Generating AI result
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- ============================= -->
+<!-- RESULT SCREEN -->
+<!-- ============================= -->
+
+<div id="resultScreen" style="display:none;">
+
+    <div class="info">
+
+        <h1>X-ray Analysis</h1>
+
+        <p class="subtitle">
+            AI-assisted fracture screening result
+        </p>
+
+        <div class="steps">
+
+            <div class="step completed">
+                <span>✓</span>
+                <b>Upload</b>
+            </div>
+
+            <div class="line completed-line"></div>
+
+            <div class="step completed">
+                <span>✓</span>
+                <b>Preview</b>
+            </div>
+
+            <div class="line completed-line"></div>
+
+            <div class="step completed">
+                <span>✓</span>
+                <b>Analyzing</b>
+            </div>
+
+            <div class="line completed-line"></div>
+
+            <div class="step active">
+                <span>4</span>
+                <b>Result</b>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RESULT CONTENT -->
+
+    <div class="result-layout">
+
+        <!-- LEFT SIDE -->
+
+        <div class="result-image-card">
+
+            <div class="result-image-header">
+
+                <span id="resultFileName">
+                    X-ray Image
+                </span>
+
+                <span class="result-view">
+                    Analysis Complete
+                </span>
+
+            </div>
+
+            <div class="result-image-viewer">
+
+                <img
+                    id="resultImage"
+                    src=""
+                    alt="Analyzed X-ray"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="result-column">
+
+            <!-- RESULT CARD -->
+
+            <div class="result-card">
+
+                <div class="result-card-header">
+
+                    <div>
+                        <small>AI SCREENING RESULT</small>
+                        <h2>Analysis Complete</h2>
+                    </div>
+
+                    <div class="result-check">
+                        ✓
+                    </div>
+
+                </div>
+
+
+                <div class="result-status">
+
+                    <span class="status-dot"></span>
+
+                    <div>
+                        <small>Screening Status</small>
+
+                        <strong>
+                            No obvious fracture detected
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="confidence-box">
+
+                    <div class="confidence-top">
+
+                        <span>AI Confidence</span>
+
+                        <strong id="confidenceValue">
+                            94%
+                        </strong>
+
+                    </div>
+
+                    <div class="confidence-bar">
+
+                        <div
+                            class="confidence-fill"
+                            style="width:94%;"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FINDINGS -->
+
+            <div class="findings-card">
+
+                <h3>AI Findings</h3>
+
+                <div class="finding">
+
+                    <span class="finding-icon">
+                        ✓
+                    </span>
+
+                    <div>
+                        <strong>
+                            Bone structure
+                        </strong>
+
+                        <p>
+                            Bone alignment appears preserved.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="finding">
+
+                    <span class="finding-icon">
+                        ✓
+                    </span>
+
+                    <div>
+                        <strong>
+                            Fracture pattern
+                        </strong>
+
+                        <p>
+                            No obvious fracture pattern identified.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="finding">
+
+                    <span class="finding-icon">
+                        ✓
+                    </span>
+
+                    <div>
+                        <strong>
+                            Image quality
+                        </strong>
+
+                        <p>
+                            Image quality is suitable for AI screening.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <button
+                class="download-report-btn"
+                id="downloadReportBtn"
+            >
+                ↓ &nbsp; Download Report
+            </button>
+
+
+            <button
+                class="new-analysis-btn"
+                id="newAnalysisBtn"
+            >
+                + &nbsp; Analyze Another X-ray
+            </button>
+
+
+            <p class="result-note">
+                This AI-generated result is intended for screening
+                assistance only and should not replace professional
+                medical evaluation.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="Analysis.js"></script>
+    <script src="Analysis.js"></script>
+
+</body>
+</html>
